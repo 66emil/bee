@@ -61,4 +61,16 @@ scripts/sync-data.mjs  подготовка данных и фото (WebP 480/9
 
 ## Деплой на Vercel
 
-Проект в подпапке `web/` — при импорте репозитория указать **Root Directory = `web`**. Переменные окружения не нужны.
+Прототип: **https://dommeda-prototype.vercel.app** (проект `dommeda-prototype`, Root Directory = `web`).
+
+- **Пуш в `redesign`** — Vercel сам собирает превью-версию (ссылка появится у коммита на GitHub;
+  превью видны только участникам команды Vercel).
+- **Обновить публичную ссылку** — из корня репозитория:
+  ```bash
+  npx vercel deploy --prod
+  ```
+  (`.vercelignore` в корне не даёт загружать `site/`, `mock-backend/` и прочее — для сборки нужна только `web/`.)
+- Production-ветка проекта — `main`. Чтобы публичная ссылка обновлялась сама при пуше в `redesign`,
+  переключите ветку в Vercel → Settings → Environments → Production → Branch Tracking.
+
+Переменные окружения не нужны.

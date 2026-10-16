@@ -2,3 +2,6 @@
 mock-backend/data/runtime/
 node_modules/
 .DS_Store
+# Vercel: привязка проекта и временные токены
+.vercel
+.env*

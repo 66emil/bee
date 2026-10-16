@@ -1,7 +1,7 @@
 # dommeda.ru: локальная копия и мок-бэкенд для прототипа
 
 ```
-web/             ★ прототип новой версии (Next.js) — см. web/README.md
+web/             ★ прототип новой версии (Next.js) — https://dommeda-prototype.vercel.app, см. web/README.md
 site/            зеркало публичной части www.dommeda.ru (HTML, CSS, JS, картинки)
 mock-backend/    мок-бэкенд: раздаёт site/ + легаси-эндпоинты сайта + REST API v1 для нового фронта
   data/          catalog.json, content.json (из site/), settings.json, fixtures.json (тестовые заказы/заявки)

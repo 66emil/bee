@@ -1,0 +1,9 @@
+# Для сборки прототипа нужна только папка web/ (Root Directory = web в настройках Vercel).
+# Остальное не загружаем при `vercel deploy` из корня репозитория.
+site/
+logs/
+mock-backend/
+tools/
+docs/
+web/node_modules/
+web/.next/
