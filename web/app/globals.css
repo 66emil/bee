@@ -1,0 +1,310 @@
+@import "tailwindcss";
+
+/* Дом мёда — дизайн-токены. Принципы: docs/design/principles.md
+   Основа нейтральная и тёплая, цвет даёт продукт. Один тёмный «фирменный» цвет и один редкий медовый акцент. */
+@theme {
+  --color-cream: #fbf7f0; /* фон страницы */
+  --color-paper: #f4ecdf; /* подложка фото, тональные секции */
+  --color-paper-2: #ebe0cc;
+  --color-line: #e4d7c2;
+  --color-ink: #2b1c12; /* основной текст */
+  --color-ink-2: #5d4a3b;
+  --color-ink-3: #8a7663;
+  --color-brown: #4a2814; /* фирменный, близко к #472512 со старого сайта */
+  --color-brown-2: #64381c;
+  --color-honey: #d4912a; /* акцент: редко */
+  --color-honey-soft: #f3e2b9;
+  --color-error: #a43c1e;
+  --color-ok: #4f6b3a;
+
+  --radius-ui: 10px;
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@theme inline {
+  --font-display: var(--font-cormorant), "Times New Roman", serif;
+  --font-sans: var(--font-golos), system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+  }
+  body {
+    background: var(--color-cream);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: 17px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  ::selection {
+    background: var(--color-honey-soft);
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-honey);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  img {
+    max-width: 100%;
+  }
+}
+
+@layer components {
+  .container-x {
+    width: 100%;
+    max-width: 1280px;
+    margin-inline: auto;
+    padding-inline: 20px;
+  }
+  @media (min-width: 768px) {
+    .container-x {
+      padding-inline: 40px;
+    }
+  }
+
+  /* Типографика: контраст размером, а не украшением */
+  .t-display {
+    font-family: var(--font-display);
+    font-weight: 500;
+    line-height: 1.02;
+    letter-spacing: -0.01em;
+    font-size: clamp(2.6rem, 6vw, 4.75rem);
+  }
+  .t-h1 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    line-height: 1.06;
+    letter-spacing: -0.005em;
+    font-size: clamp(2.2rem, 4.4vw, 3.5rem);
+  }
+  .t-h2 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    line-height: 1.1;
+    font-size: clamp(1.9rem, 3.2vw, 2.75rem);
+  }
+  .t-h3 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    line-height: 1.15;
+    font-size: clamp(1.45rem, 2vw, 1.75rem);
+  }
+  .t-lead {
+    font-size: clamp(1.05rem, 1.4vw, 1.25rem);
+    line-height: 1.55;
+    color: var(--color-ink-2);
+  }
+  .t-eyebrow {
+    font-size: 12px;
+    line-height: 1.4;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-ink-3);
+  }
+  .t-small {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  /* Кнопки: один стиль, одно скругление */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    min-height: 48px;
+    padding: 0 1.5rem;
+    border-radius: var(--radius-ui);
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s, transform 0.2s var(--ease-out-soft);
+    white-space: nowrap;
+    cursor: pointer;
+  }
+  .btn:active {
+    transform: translateY(1px);
+  }
+  .btn-primary {
+    background: var(--color-brown);
+    color: var(--color-cream);
+  }
+  .btn-primary:hover {
+    background: var(--color-brown-2);
+  }
+  .btn-primary:disabled {
+    opacity: 0.55;
+    cursor: default;
+  }
+  .btn-ghost {
+    border: 1px solid var(--color-line);
+    color: var(--color-ink);
+    background: transparent;
+  }
+  .btn-ghost:hover {
+    border-color: var(--color-ink-3);
+  }
+  .link-u {
+    background-image: linear-gradient(currentColor, currentColor);
+    background-size: 100% 1px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    padding-bottom: 2px;
+    transition: background-size 0.3s var(--ease-out-soft);
+  }
+  .link-u:hover {
+    background-size: 0% 1px;
+    background-position: 100% 100%;
+  }
+
+  /* Выбор фасовки / фильтры */
+  .chip {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    min-height: 48px;
+    padding: 0.45rem 0.95rem;
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-ui);
+    background: var(--color-cream);
+    line-height: 1.25;
+    white-space: nowrap;
+    transition: border-color 0.15s, background-color 0.15s, box-shadow 0.15s;
+    cursor: pointer;
+    text-align: left;
+  }
+  .chip-sm {
+    min-height: 44px;
+    padding-block: 0.35rem;
+    font-size: 14px;
+  }
+  @media (min-width: 768px) {
+    .chip-sm {
+      min-height: 40px;
+    }
+  }
+  /* цены набираем ровными (не старостильными) цифрами — так их легче читать */
+  .num {
+    font-variant-numeric: lining-nums tabular-nums;
+  }
+  .chip:hover {
+    border-color: var(--color-ink-3);
+  }
+  .chip[aria-pressed="true"],
+  .chip[aria-checked="true"],
+  .chip[aria-current="page"] {
+    border-color: var(--color-brown);
+    box-shadow: inset 0 0 0 1px var(--color-brown);
+    background: #fff;
+  }
+
+  /* Поля форм */
+  .field {
+    display: block;
+    width: 100%;
+    min-height: 50px;
+    padding: 0.75rem 0.95rem;
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-ui);
+    background: #fff;
+    font-size: 16px;
+    color: var(--color-ink);
+    transition: border-color 0.15s;
+  }
+  .field:focus {
+    outline: none;
+    border-color: var(--color-brown);
+  }
+  .field[aria-invalid="true"] {
+    border-color: var(--color-error);
+  }
+  .label {
+    display: block;
+    margin-bottom: 0.4rem;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--color-ink-2);
+  }
+
+  /* Тексты страниц из CMS */
+  .prose-dm {
+    max-width: 68ch;
+    color: var(--color-ink-2);
+  }
+  .prose-dm p,
+  .prose-dm ul,
+  .prose-dm ol {
+    margin-block: 0 1em;
+  }
+  .prose-dm ul {
+    list-style: none;
+    padding: 0;
+  }
+  .prose-dm ul li {
+    position: relative;
+    padding-left: 1.1em;
+    margin-bottom: 0.35em;
+  }
+  .prose-dm ul li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.7em;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--color-honey);
+  }
+  .prose-dm strong {
+    color: var(--color-ink);
+    font-weight: 600;
+  }
+  .prose-dm a {
+    color: var(--color-brown);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+  }
+  .prose-dm h2,
+  .prose-dm h3 {
+    font-family: var(--font-display);
+    color: var(--color-ink);
+    font-weight: 600;
+    font-size: 1.6rem;
+    line-height: 1.2;
+    margin: 1.6em 0 0.6em;
+  }
+}
+
+@layer utilities {
+  .no-scrollbar {
+    scrollbar-width: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .text-balance {
+    text-wrap: balance;
+  }
+  .text-pretty {
+    text-wrap: pretty;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}

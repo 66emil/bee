@@ -377,6 +377,7 @@ def main():
         lst = listings.get(pth, [])
         own = next((x for x in lst if x["listedIn"] == p["categoryPath"]), lst[0] if lst else None)
         if own:
+            p["cardName"] = own["name"]  # короткое имя с витрины («Липовый»), name — это H1 со SEO-хвостом
             p["image"]["thumb"] = own["thumb"]
             p["shortDescriptionHtml"] = own["shortDescriptionHtml"]
             p["listPrice"] = own["listPrice"]

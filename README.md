@@ -1,11 +1,13 @@
 # dommeda.ru: локальная копия и мок-бэкенд для прототипа
 
 ```
+web/             ★ прототип новой версии (Next.js) — см. web/README.md
 site/            зеркало публичной части www.dommeda.ru (HTML, CSS, JS, картинки)
 mock-backend/    мок-бэкенд: раздаёт site/ + легаси-эндпоинты сайта + REST API v1 для нового фронта
   data/          catalog.json, content.json (из site/), settings.json, fixtures.json (тестовые заказы/заявки)
 tools/           mirror.sh (wget), fix_assets.py (докачка), extract_catalog.py (данные), har_analyze.py (HAR)
 docs/API.md      структура данных, маршруты, что сверить по HAR
+docs/design/     принципы нового дизайна
 logs/            wget.log, fix_assets.log, assets_report.json
 ```
 

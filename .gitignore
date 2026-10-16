@@ -1,0 +1,4 @@
+# служебное состояние мока (PERSIST=1)
+mock-backend/data/runtime/
+node_modules/
+.DS_Store
