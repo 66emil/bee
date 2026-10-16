@@ -1,0 +1,86 @@
+{
+  "_comment": "Синтетические тестовые данные (все персональные данные вымышлены). Каталог — в catalog.json (генерируется из ./site).",
+  "extraProducts": [
+    {
+      "id": 611,
+      "slug": "paket-majka-dom-meda-bolshoj",
+      "path": "/service/paket-majka",
+      "categoryPath": null,
+      "categoryId": null,
+      "categoryIds": [],
+      "name": "Пакет-майка \"Дом меда\" большой 42+25х70",
+      "price": 15,
+      "optionType": null,
+      "options": [],
+      "image": { "full": null, "medium": null, "thumb": null },
+      "gallery": [],
+      "properties": [],
+      "descriptionHtml": null,
+      "relatedIds": [],
+      "menuIndex": 9999,
+      "available": true,
+      "hidden": true,
+      "_comment": "Служебный товар: предлагается радиокнопкой на странице корзины (data-id=611), в каталоге не виден"
+    }
+  ],
+  "orders": [
+    {
+      "id": 1001,
+      "createdAt": "2026-10-01T09:15:00.000Z",
+      "status": "delivered",
+      "source": "site",
+      "customer": { "name": "Иван Тестов", "phone": "+7 900 000-00-01", "email": "ivan.test@example.com" },
+      "delivery": { "method": "courier", "title": "Курьером по Москве (в пределах МКАД)", "address": "Москва, ул. Тестовая, д. 1, кв. 1", "price": 350 },
+      "payment": { "method": "cash", "title": "Наличными курьеру" },
+      "comment": "Позвонить за час",
+      "items": [
+        { "productId": 442, "name": "Липовый", "option": { "index": 0, "name": "1 килограмм" }, "price": 3155, "count": 1, "total": 3155 },
+        { "productId": 444, "name": "Липовый мёд 0,5 кг \"Румела\"", "option": { "index": 0, "name": "500 г" }, "price": 399, "count": 2, "total": 798 }
+      ],
+      "subtotal": 3953,
+      "deliveryPrice": 350,
+      "total": 4303,
+      "currency": "RUB"
+    },
+    {
+      "id": 1002,
+      "createdAt": "2026-10-10T14:40:00.000Z",
+      "status": "new",
+      "source": "site",
+      "customer": { "name": "Мария Пример", "phone": "+7 900 000-00-02", "email": null },
+      "delivery": { "method": "pickup", "title": "Самовывоз из магазина (ул. Новокузнецкая 5, стр. 1)", "address": null, "price": 0 },
+      "payment": null,
+      "comment": null,
+      "items": [
+        { "productId": 442, "name": "Липовый", "option": { "index": 2, "name": "250 гр" }, "price": 803, "count": 3, "total": 2409 }
+      ],
+      "subtotal": 2409,
+      "deliveryPrice": 0,
+      "total": 2409,
+      "currency": "RUB"
+    },
+    {
+      "id": 1003,
+      "createdAt": "2026-10-12T11:05:00.000Z",
+      "status": "canceled",
+      "source": "site",
+      "customer": { "name": "Пётр Пчеловодов", "phone": "+7 900 000-00-03", "email": "beekeeper@example.com" },
+      "delivery": { "method": "courier_outside", "title": "Курьером за МКАД", "address": "Московская обл., д. Пасечная, 7", "price": 600 },
+      "payment": { "method": "card_courier", "title": "Банковской картой курьеру" },
+      "comment": "Отмена по просьбе клиента",
+      "items": [
+        { "productId": 102, "name": "Дымарь нерж. электрический (питание от батарей)", "option": null, "price": 2415, "count": 1, "total": 2415 }
+      ],
+      "subtotal": 2415,
+      "deliveryPrice": 600,
+      "total": 3015,
+      "currency": "RUB"
+    }
+  ],
+  "callbackRequests": [
+    { "id": 1, "createdAt": "2026-10-14T08:00:00.000Z", "name": "Анна Звонкова", "phone": "+7 900 000-00-04", "source": "site", "status": "done" }
+  ],
+  "feedback": [
+    { "id": 1, "createdAt": "2026-10-15T17:30:00.000Z", "name": "Олег Отзывов", "email": "oleg@example.com", "phone": null, "message": "Есть ли в продаже мёд в сотах в рамках?", "source": "site" }
+  ]
+}

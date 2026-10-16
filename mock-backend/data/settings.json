@@ -1,0 +1,62 @@
+{
+  "siteName": "Дом мёда",
+  "baseUrl": "https://www.dommeda.ru",
+  "phones": [
+    { "display": "+7 (495) 951-10-12", "tel": "+74959511012", "label": "Торговый зал" },
+    { "display": "+7 (495) 951-43-78", "tel": "+74959514378", "label": "Торговый зал / Администрация" },
+    { "display": "+7 (495) 951-10-84", "tel": "+74959511084", "label": "Бухгалтерия" }
+  ],
+  "email": "info@dommeda.ru",
+  "address": {
+    "postcode": "115184",
+    "city": "Москва",
+    "street": "ул. Новокузнецкая 5, стр. 1",
+    "mapUrl": "http://maps.yandex.ru/-/CVrXIOjE"
+  },
+  "workHours": [
+    { "days": "Пн–Сб", "from": "09:00", "to": "20:00" },
+    { "days": "Вс", "from": "10:00", "to": "20:00" }
+  ],
+  "legal": { "company": "ООО «АПИ-групп»", "ogrn": "1077758592625" },
+  "socials": [
+    { "id": "vk", "url": "https://vk.com/dommeda" },
+    { "id": "fb", "url": "https://www.facebook.com/dommeda.ru" },
+    { "id": "ok", "url": "http://www.odnoklassniki.ru/dommeda.ru" },
+    { "id": "instagram", "url": "http://instagram.com/dommeda" }
+  ],
+  "menu": {
+    "main": [
+      { "title": "О нас", "path": "/about" },
+      { "title": "Каталог мёда", "path": "/katalog-meda" },
+      { "title": "Рецепты с медом", "path": "/recepty-s-medom" },
+      { "title": "Пчеловодам", "path": "/pchelovodam" },
+      { "title": "Музей", "path": "/museum" },
+      { "title": "Контакты", "path": "/contacts" }
+    ],
+    "footer": [
+      { "title": "Политика конфиденциальности", "path": "/politika-konfidencialnosti" },
+      { "title": "Договор оферты", "path": "/dogovor-oferty" },
+      { "title": "Условия заказа", "path": "/about/oplata_i_dostavka" }
+    ]
+  },
+  "currency": { "code": "RUB", "left": "", "right": "", "decimals": 2, "decsep": ",", "thsep": " " },
+
+  "_comment_checkout": "Способы доставки/оплаты восстановлены по js/script.js (#deliv1..3, #pay1..3) и странице «Условия заказа». Названия и цены — ПРЕДПОЛОЖЕНИЕ, сверить с HAR оформления заказа.",
+  "deliveryMethods": [
+    { "id": "courier", "domId": "deliv1", "title": "Курьером по Москве (в пределах МКАД)", "price": 350, "needsAddress": true, "payments": ["cash", "card_courier", "online"] },
+    { "id": "courier_outside", "domId": "deliv2", "title": "Курьером за МКАД", "price": 600, "needsAddress": true, "payments": ["cash", "card_courier"] },
+    { "id": "pickup", "domId": "deliv3", "title": "Самовывоз из магазина (ул. Новокузнецкая 5, стр. 1)", "price": 0, "needsAddress": false, "payments": [] }
+  ],
+  "paymentMethods": [
+    { "id": "cash", "domId": "pay1", "title": "Наличными курьеру" },
+    { "id": "card_courier", "domId": "pay2", "title": "Банковской картой курьеру" },
+    { "id": "online", "domId": "pay3", "title": "Онлайн-оплата картой" }
+  ],
+
+  "_comment_cartWidgets": "Хеши data-commerce-cart со страниц сайта (стабильны) -> какой шаблон рендерить в ответ /commerce/*",
+  "cartWidgets": {
+    "618d6fa904a3231e7a50bc6c80c2b30b": "header",
+    "fd719af6d03de06a109a106ad39c0cbe": "header-mobile",
+    "basket0000000000000000000000mock": "basket"
+  }
+}

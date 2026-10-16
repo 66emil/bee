@@ -1,0 +1,17 @@
+[
+  {
+    "from": "/contacts/",
+    "to": "/contacts",
+    "status": 301
+  },
+  {
+    "from": "/catalog/honey-11/",
+    "to": "/katalog-meda",
+    "status": 301
+  },
+  {
+    "from": "/about/oplata_i_dostavka/",
+    "to": "/about/oplata_i_dostavka",
+    "status": 301
+  }
+]

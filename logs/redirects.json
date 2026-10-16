@@ -1,0 +1,17 @@
+[
+ {
+  "from": "https://www.dommeda.ru/contacts/",
+  "to": "https://dommeda.ru/contacts",
+  "status": 301
+ },
+ {
+  "from": "https://www.dommeda.ru/catalog/honey-11/",
+  "to": "https://dommeda.ru/katalog-meda",
+  "status": 301
+ },
+ {
+  "from": "https://www.dommeda.ru/about/oplata_i_dostavka/",
+  "to": "https://dommeda.ru/about/oplata_i_dostavka",
+  "status": 301
+ }
+]
